@@ -30,24 +30,28 @@ public class MainApp {
       car5.setModel("Mercedes");
       car5.setSeries(124);
       user5.setCar(car5);
+      car5.setUser(user5);
       userService.add(user5);
 
       Car car6 = new Car();
       car6.setModel("Lada");
       car6.setSeries(2101);
       user6.setCar(car6);
+      car6.setUser(user6);
       userService.add(user6);
 
       Car car7 = new Car();
       car7.setModel("Mercedes");
       car7.setSeries(124);
       user7.setCar(car7);
+      car7.setUser(user7);
       userService.add(user7);
 
       Car car8 = new Car();
       car8.setModel("Lada");
       car8.setSeries(2124);
       user8.setCar(car8);
+      car8.setUser(user8);
       userService.add(user8);
 
       List<User> users = userService.listUsers();
@@ -59,7 +63,7 @@ public class MainApp {
          System.out.println();
       }
 
-      List<User> users1 = userService.userByCar("Mercedes", 600);
+      List<User> users1 = userService.userByCar("Mercedes", 124);
       for (User user : users1) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());

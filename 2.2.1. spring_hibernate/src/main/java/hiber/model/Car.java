@@ -7,8 +7,7 @@ import javax.persistence.*;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="user_id")
     private Long id;
 
     @Column(name="model")
@@ -18,6 +17,8 @@ public class Car {
     private int series;
 
     @OneToOne
+    @MapsId
+    @JoinColumn(name="user_id")
     private User user;
 
     public Car() {
@@ -47,5 +48,9 @@ public class Car {
 
     public Long getId() {
         return id;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
