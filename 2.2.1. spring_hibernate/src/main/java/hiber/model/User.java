@@ -20,8 +20,9 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-   @PrimaryKeyJoinColumn
+   @OneToOne
+   @MapsId
+   @JoinColumn(name = "id", referencedColumnName = "user_id")
    private Car car;
 
    public User() {};
